@@ -13,3 +13,7 @@ export const columns = () => {
 export const newColumn = (column) => {
   return http.post('/columns', column)
 }
+
+export const newCard = (card) => {
+  return http.post('/cards', card)
+}

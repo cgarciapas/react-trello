@@ -3,7 +3,6 @@ import Column from './Column';
 import { columns } from '../services/TrelloService';
 import ColumnForm from './ColumnForm';
 
-
 export default class Board extends Component {
 
   getColumns = ()=> {
@@ -32,6 +31,8 @@ export default class Board extends Component {
     })
 
     return (
+
+      
       <div className="section">
         <div className="container-fluid">
           <div className="row">
