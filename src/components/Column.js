@@ -12,7 +12,6 @@ export default class Column extends Component {
     }
   }
 
-
   render() {
     const cards = this.state.cards.map((card, index) => {
       return <Card {...card} key={index} />

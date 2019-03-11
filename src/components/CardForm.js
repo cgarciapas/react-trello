@@ -9,13 +9,13 @@ export default class CardForm extends Component {
     this.state = {
       card: {
         title: '',
-        description: ''
+        description: '',
+        imageUrl: ''
       },
       onSubmit: false
     }
   }
   
-
   handleSubmit = (e) => {
     e.preventDefault()
     newCard({ ...this.state.card, ...this.props.location.state })
@@ -27,12 +27,25 @@ export default class CardForm extends Component {
   }
 
   handleChange = (e) => {
-    this.setState({
-      card : {
-        ...this.state.card,
-        [e.target.name]: e.target.value
-      }
-    })
+    const {name} = e.target;
+    console.log(e.target.files)
+    if(e.target.files){
+      this.setState({
+        card : {
+          ...this.state.card,
+          [name]: e.target.value,
+          imageUrl : e.target.files ? e.target.files[0] : e.target.value,
+        }
+      }, () =>  console.log(this.state))
+     
+    } else {
+      this.setState({
+        card : {
+          ...this.state.card,
+          [name]: e.target.value,
+        }
+      }, () =>  console.log(this.state))
+    }
   }
 
   render() {
@@ -64,7 +77,14 @@ export default class CardForm extends Component {
           value={this.state.card.description}
           onChange={this.handleChange}/>
       </div>
-      <button type="submit" className="btn btn-primary">Submit</button>
+      <div class="custom-file">
+        <input type="file" class="custom-file-input" id="customFile" name='imageUrl'
+        onChange={this.handleChange}
+        />
+        <button type="submit" className="btn btn-primary">Submit</button>
+        {this.state.card.imageUrl && <img src={URL.createObjectURL(this.state.card.imageUrl)} alt='preview'></img>}  
+        <label className="custom-file-label" htmlFor="customFile">Choose file</label>
+      </div>
     </form>
     </Fragment>
     );
