@@ -32,9 +32,8 @@ export default class ColumnForm extends Component {
   }
 
   render() {
-    console.log(this.props.currentPosition);
     return (
-    <form onSubmit={this.handleSubmit}>
+    <form onSubmit={this.handleSubmit} className='w-costum form-column'>
       <div className="form-group">
         <label>Title</label>
         <input

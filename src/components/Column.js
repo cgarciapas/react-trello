@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import Card from './Card';
+import {deleteCard } from '../services/TrelloService';
 
 
 export default class Column extends Component {
@@ -12,16 +13,35 @@ export default class Column extends Component {
     }
   }
 
+  delete = (e) => {
+    const id = e.target.dataset.id
+    deleteCard(id)
+      .then(card => {
+        this.setState({
+          cards: this.state.cards.filter(c => c.id !== id)
+        })
+      },
+      (error => console.log(error)))
+  }
+
+  cardsList = () => (
+      this.state.cards.map((card, index) => {
+        return <Card deleteCard={this.delete} id={card.id} {...card} key={index} />
+      })
+  )
+
   render() {
-    const cards = this.state.cards.map((card, index) => {
-      return <Card {...card} key={index} />
-    })
     return (
-      <div className="col-3 bg-primary p-2">
-        <h4>{this.props.title}</h4>
-        {cards}
-        <Link to={{pathname: "/new-card", state: {position: (this.state.cards.length) + 1, column:this.props.id}}}>Add New Card</Link>
-      </div>
+        <div className="w-costum p-2 column">
+          <div className="rend-flex">
+          <h4 className='ml-2'>{this.props.title}</h4>
+          <i data-id={this.props.id} class="fas fa-times mr-2" onClick={this.props.deleteColumn}></i>
+          </div>
+        <div className='over-flow-card'>
+        {this.cardsList()}
+            <Link to={{pathname: "/new-card", state: {position: (this.state.cards.length) + 1, column:this.props.id}}}>Add New Card</Link>
+        </div>
+        </div>
     );
   }
 }

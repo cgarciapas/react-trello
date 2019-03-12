@@ -14,9 +14,14 @@ export const newColumn = (column) => {
   return http.post('/columns', column)
 }
 
-// export const newCard = (card) => {
-//   return http.post('/cards', card)
-// }
+export const deleteColumn = (id) => {
+  return http.delete(`/columns/${id}`)
+}
+
+export const deleteCard = (id) => {
+  return http.delete(`/cards/${id}`)
+}
+
 
 
 export const newCard = (card) => {
