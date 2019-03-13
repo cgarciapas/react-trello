@@ -60,6 +60,32 @@
   margin-top: 5px
 }
 
+.body-black{
+  background-color: rgba(0,0,0,0.65);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+}
+
+.absolute-form{
+  background-color: white;
+  position: absolute;
+  padding: 21px;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.05);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.image-form-card{
+  max-width: 160px;
+}
+.image-div{
+  width: 100%;
+}
+
 .image-card{
   object-fit: cover;
   width: 100%;

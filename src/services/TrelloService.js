@@ -22,10 +22,7 @@ export const deleteCard = (id) => {
   return http.delete(`/cards/${id}`)
 }
 
-
-
 export const newCard = (card) => {
-  
   const data =  new FormData();
   Object.keys(card).forEach(key => data.append(key, card[key]))
   return http.post('/cards', data)

@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import { newCard } from '../services/TrelloService';
-import { Redirect } from 'react-router-dom';
+import { Redirect, Link } from 'react-router-dom';
 import Board from './Board';
 export default class CardForm extends Component {
   constructor(props) {
@@ -37,7 +37,6 @@ export default class CardForm extends Component {
           imageUrl : e.target.files ? e.target.files[0] : e.target.value,
         }
       }, () =>  console.log(this.state))
-     
     } else {
       this.setState({
         card : {
@@ -56,7 +55,10 @@ export default class CardForm extends Component {
     return (
       <Fragment>
         < Board />
+        <div className='body-black'></div>
+        <div className='absolute-form'>
         <form onSubmit={this.handleSubmit}>
+        <div className='text-right'> <Link to='/'><i data-id={this.props.id} class="fas fa-times mr-2" onClick={this.props.deleteColumn}></i></Link></div>
         <div className="form-group">
         <label>Title</label>
         <input
@@ -77,15 +79,26 @@ export default class CardForm extends Component {
           value={this.state.card.description}
           onChange={this.handleChange}/>
       </div>
+      <div className="form-group">
+      <label>Add image</label>
       <div class="custom-file">
         <input type="file" class="custom-file-input" id="customFile" name='imageUrl'
         onChange={this.handleChange}
         />
-        <button type="submit" className="btn btn-primary">Submit</button>
-        {this.state.card.imageUrl && <img src={URL.createObjectURL(this.state.card.imageUrl)} alt='preview'></img>}  
+        <button type="submit" className="btn btn-primary w-100 mt-3 mb-4">Submit</button>
+        {this.state.card.imageUrl && 
+        
+        <div class='image-div'>
+           <img src={URL.createObjectURL(this.state.card.imageUrl)} className='image-form-card' alt='preview'></img>
+        </div>
+        
+        
+        }  
         <label className="custom-file-label" htmlFor="customFile">Choose file</label>
       </div>
+      </div>
     </form>
+    </div>
     </Fragment>
     );
   }

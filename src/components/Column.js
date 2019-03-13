@@ -27,7 +27,7 @@ export default class Column extends Component {
   cardsList = () => (
       this.state.cards.map((card, index) => {
         return <Card deleteCard={this.delete} id={card.id} {...card} key={index} />
-      })
+      }).reverse()  
   )
 
   render() {
