@@ -33,29 +33,31 @@ export default class ColumnForm extends Component {
 
   render() {
     return (
-    <form onSubmit={this.handleSubmit} className='w-costum form-column'>
-      <div className="form-group">
-        <label>Title</label>
+      <div>
+      
+    <form onSubmit={this.handleSubmit} className=' row  form-col'>
+    <h5 className='text-white p-0 m-0 d-none d-lg-block d-md-block'><strong>New</strong> Column</h5>
+      <div className=" col-xl-2 col-md-3 col-5 w-100">
         <input
           type="text"
           name='title'
           className="form-control"
-          placeholder="Enter title"
+          placeholder="Column title"
           value={this.state.column.title}
           onChange={this.handleChange}/>
       </div> 
-      <div className="form-group">
-        <label>Description</label>
+      <div className=" col-xl-2 col-md-3 col-5 pl-0">
         <input
           type="text"
           name='description'
-          className="form-control"
-          placeholder="Enter description"
+          className="form-control "
+          placeholder="Column description"
           value={this.state.column.description}
           onChange={this.handleChange}/>
       </div>
-      <button type="submit" className="btn btn-primary">Submit</button>
+      <button type="submit" className="btn btn-primary "> <i data-id={this.props.id} class="fas fa-plus" onClick={this.props.deleteColumn}></i></button>
     </form>
+    </div>
     );
   }
 }

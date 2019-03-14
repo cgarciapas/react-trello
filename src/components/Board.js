@@ -37,7 +37,7 @@ export default class Board extends Component {
   }
 
   widthColumns = () => {
-    return 300 * (this.state.columns.length +1)
+    return 300 * (this.state.columns.length)
   }
 
   renderColumns = () => (
@@ -48,14 +48,16 @@ export default class Board extends Component {
 
   render() {
     return (
+      <React.Fragment>
+      <ColumnForm currentPosition={(this.state.columns.length)+1} refresh = {this.getColumns} />
       <div className="section trello-section" style={{'width':this.widthColumns()}}>
         <div className="container-fluid">
-          <div className="row">
+          <div className="row mt-5">
             {this.renderColumns()}
-            <ColumnForm currentPosition={(this.state.columns.length)+1} refresh = {this.getColumns} />
           </div>
         </div>
       </div>
+      </React.Fragment>
     );
   }
 }

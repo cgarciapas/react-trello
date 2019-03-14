@@ -16,7 +16,8 @@ export default class Card extends Component {
       <div className="w-100 card">
       <div className="w-100 delete-head-card"><i data-id={this.props.id} class="fas fa-times mr-2 f-1" onClick={this.props.deleteCard}></i></div>
         <img src={this.props.imageUrl} className='image-card'></img>
-        <p>{this.props.title}</p>
+        <p className='text-left pl-2'><strong>{this.props.title}</strong></p>
+        <p>{this.props.description}</p>
       </div>
     );
   }

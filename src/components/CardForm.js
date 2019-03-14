@@ -28,7 +28,7 @@ export default class CardForm extends Component {
 
   handleChange = (e) => {
     const {name} = e.target;
-    console.log(e.target.files)
+
     if(e.target.files){
       this.setState({
         card : {
@@ -36,14 +36,14 @@ export default class CardForm extends Component {
           [name]: e.target.value,
           imageUrl : e.target.files ? e.target.files[0] : e.target.value,
         }
-      }, () =>  console.log(this.state))
+      })
     } else {
       this.setState({
         card : {
           ...this.state.card,
           [name]: e.target.value,
         }
-      }, () =>  console.log(this.state))
+      })
     }
   }
 
