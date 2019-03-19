@@ -14,11 +14,11 @@ export default class ColumnForm extends Component {
   }
 
   handleSubmit = (e) => {
+    console.log(this.props.currentPosition )
     e.preventDefault()
     newColumn({ ...this.state.column, position: this.props.currentPosition })
     .then(data => 
-      this.props.refresh(),
-      (error) => console.log(error.response.data)
+      this.props.refresh()
     )
   }
 
