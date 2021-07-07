@@ -2,6 +2,26 @@
   text-align: center;
 }
 
+.body{
+  background:url('https://res.cloudinary.com/dwta0wgpp/image/upload/v1552568033/react-test/photo-1484417894907-623942c8ee29.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  z-index: -1;
+  top: 0;
+}
+
+.name-brand{
+  color:white;
+}
+
+.bg-half{
+  background-color: rgba(31, 30, 30, 0.151)
+}
+
 .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 40vmin;
@@ -18,10 +38,143 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+.rend-flex{
+  display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
 
 .App-link {
   color: #61dafb;
 }
+.form-column{
+  width: 300px !important;
+  margin-left: 20px !important;
+}
+.w-costum{
+  width:272px;
+  margin: 5px;
+}
+
+.Header{
+  position: fixed;
+  width: 100%;
+  top: 0px;
+}
+.trello-section{
+  margin-top: 70px;
+  margin-left: 5px;
+}
+.over-flow-card{
+  overflow-y: scroll;
+  max-height: 80vh;
+}
+.card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  justify-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
+  margin-top: 5px
+}
+
+.body-black{
+  background-color: rgba(0,0,0,0.65);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  pointer-events: none;
+}
+
+.absolute-form{
+  background-color: white;
+  position: absolute;
+  padding: 21px;
+  border-radius: 3px;
+  border: 1px solid rgba(0,0,0,0.05);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.image-form-card{
+  max-width: 160px;
+  margin-bottom: 20px;
+}
+.image-div{
+  width: 100%;
+}
+
+.image-card{
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+}
+.f-1{
+  padding-top: 2px;
+  font-size: 0.8rem;
+}
+.card p{
+  padding-top: 5px;
+  margin-bottom: 0px;
+}
+
+.delete-head-card{
+  display: flex;
+  align-items: center;
+  justify-items: center;
+  justify-content: flex-end;
+  color:white;
+  height: 20px;
+  background-color: red;
+  border-radius: 3px 3px 0px 0px;
+}
+
+.column{
+  background-color:#dee3e6 !important;
+  border-radius: 3px;
+  height: 100%;
+  margin-top: 80px!important;
+}
+.column h4{
+  text-align: left;
+    margin-top: 7px;
+    font-weight: bold;
+    font-size: 1.0rem
+}
+
+::placeholder {
+  color: grey !important;
+  opacity: 0.7 !important; 
+  font-style: italic;
+}
+
+.fa-plus{
+  margin: 0 auto !important;
+}
+.form-intro{
+  width: 100%;
+  max-width: 350px;
+}
+.form-col{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    margin-top: -14px;
+    background-color: rgba(255,255,255,0.3);
+    padding: 20px;
+    position: fixed;
+    width: 100vw;
+    margin-left: 0px !important;
+    padding: 13px !important;
+    padding-left: 18px!important;
+}
+
 
 @keyframes App-logo-spin {
   from {
